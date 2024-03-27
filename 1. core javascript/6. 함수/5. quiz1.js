@@ -20,6 +20,6 @@ function calcDivisor(n) {
   return arr.length;
 }
 
-
+let adddivisor;
 var divCount = calcDivisor(20);
 console.log(`약수의 개수: ${divCount}개`);
