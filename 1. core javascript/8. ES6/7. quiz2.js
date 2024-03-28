@@ -83,7 +83,7 @@ function some(callback) {
 
 // // 급여 5,000,000 이상인 사용자가 하나라도 있는지 확인하는 예시
 const hasHighEarningUser = some((user) => user.salary >= 5000000);
-console.log('연봉이 5,000,000 이상인 사용자가 있는가?:', hasHighEarningUser);
+console.log('연봉이 5,000,000 이상인 사용자가 있는가?:', hasHighEarningUser); // true
 
 function every(callback) {
   let total = 0;
