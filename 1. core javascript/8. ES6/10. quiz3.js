@@ -156,11 +156,63 @@ const higherSeven = traders
 //결과는 `{거래자이름: 평균거래액}` 형태의 객체가 되어야 합니다.** 객체를 foreach로 출력
 
 const getAvg = traders
-    .reduce((total, trs) => total + trs.value, 0)
+    .reduce((averageList, trs) => {
+      const name = trs.trader.name;
+      if (!averageList[name]) { // 이 사람이름이 처음 등장했으면
+        averageList[name] = {total: trs.value, count: 1} // 객체에 추가해준다
+      } else { // 이 사람이름이 있으면
+        averageList[name].total += trs.value; // 거래액 누적
+        averageList[name].count++; // 횟수 올려주고
+      }
+      return averageList;
+    }, {})
 
-    console.log(getAvg);
+    // 평균 구하기
+    for (const key in getAvg) {
+      getAvg[key].average 
+        = getAvg[key].total / getAvg[key].count;
+    }
+
+console.log(getAvg);
+
 
 //7. **2022년과 2023년 각각에서 가장 많은 거래를 한 거래자의 이름과 그 거래 횟수를 출력해주세요.**
+
+const result = traders.reduce((acc, trs) => {
+  const key = `${trs.year}_${trs.trader.name}`;
+
+  if (!acc[key]) {
+    acc[key] = 1;
+  } else {
+    acc[key]++;
+  }
+  // 연도별 최대 거래 횟수 찾기
+  const result = traders.reduce((acc, trs) => {
+    // 연도별 거래자 거래 횟수 집계
+    const key = `${trs.year}_${trs.trader.name}`;
+  
+    if (!acc[key]) {
+      acc[key] = 1;
+    } else {
+      acc[key]++;
+    }
+    // 연도별 최대 거래 횟수 찾기
+    const yearMaxKey = `max_${trs.year}`;
+    if (!acc[yearMaxKey] || acc[key] > acc[yearMaxKey].count) {
+      acc[yearMaxKey] = { name: trs.trader.name, count: acc[key] }
+    }
+    return acc;
+  }, {});
+  
+  console.log(result);
+  // 결과 출력
+  console.log(`2022년 가장 많은 거래를 한 거래자: ${result.max_2022.name}, 거래 횟수: ${result.max_2022.count}`);
+  console.log(`2023년 가장 많은 거래를 한 거래자: ${result.max_2023.name}, 거래 횟수: ${result.max_2023.count}`);
+
+
+  return acc;
+}, {})
+console.log(result);
 
 //8. **모든 거래 중 거래액이 중간값인 거래의 정보(거래자 이름, 도시, 연도, 거래액)를 출력해주세요.**
 
