@@ -11,7 +11,6 @@ function createCounter(n) {
   }
 }
 
-
 const counterFromFive = createCounter(5);
 console.log(counterFromFive()); // 6
 console.log(counterFromFive()); // 7

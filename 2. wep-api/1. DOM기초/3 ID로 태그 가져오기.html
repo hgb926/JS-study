@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<ul id="fruits">
+  <li id='apple' class="f-item">사과</li>
+  <li id='banana' class="f-item">바나나</li>
+  <li id='grape' class="f-item">포도</li>
+  <li id='peach' class="f-item">복숭아</li>
+</ul>
+
+  <script>
+    // inline style로 들어가게 됨.
+    // 프로퍼티는 camelCase로 되어있음
+    // font-siez -> fontSize
+    const $banana = document.getElementById('banana'); // $는 관례
+    console.log($banana.textContent);
+    $banana.textContent = '바나낭'; // 프로퍼티 수정
+    $banana.pet = '바나나원숭이'; // 프로퍼티에 추가
+
+    const $peach = document.getElementById(`peach`);
+    $peach.style['font-style'] = 'italic';
+
+
+    // id가 grape인 요소노드 객체를 취득하여
+    // 배경색상을 violet색으로 조작
+
+    const $grape = document.getElementById('grape');
+    $grape.style['backgroundColor'] = 'violet';
+    $grape.style.width = 'fit-content';
+    $grape.style.color = 'gray'
+    
+    const $list = document.getElementById('wrap');
+    $list.style.border = '1px solid black'
+
+  </script>
+
+
+</body>
+</html>

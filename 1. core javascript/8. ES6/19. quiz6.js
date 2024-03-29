@@ -5,8 +5,8 @@
 
 function createCalculator() {
   let start = 0
-  const add = (n) => start = start + n;
-  const subtract = (n) => start = start - n;
+  const add = n => start += n;
+  const subtract = n => start -= n;
   const getTotal = () => start;
   return {
     add,
