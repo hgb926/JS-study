@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .input {
+        border: 1px solid blue;
+        border-radius: 7%;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="text"
+      class="input"
+      placeholder="글자 크기를 픽셀 단위로 입력"
+    />
+    <div class="size">여기 있는 텍스트의 크기를 조정해보세요!</div>
+    <script>
+      const $input = document.querySelector('.input');
+      const $size = document.querySelector('.size');
+      function changeSize() {
+        $size.style.fontSize = $input.value;
+      }
+      $input.addEventListener('change', changeSize)
+
+
+    </script>
+  </body>
+</html>

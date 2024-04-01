@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <input type="email" id="account" value="abc#def.com">
+
+  <script>
+    // 속성 교체
+    const $input = document.querySelector('input');
+    console.log($input.attributes.type);
+    console.log($input.attributes.type.value);
+
+    // 객체 형태로 되어있으니 .attributes로 접근.
+    // $input.attributes.type.value = 'range';
+    $input.attributes.value.value = 'hgb926@naver.com';
+
+    
+
+  </script>
+</body>
+</html>

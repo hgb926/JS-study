@@ -1,0 +1,76 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .input {
+      border: 1px solid blue;
+      border-radius: 7%;
+    }
+    .red {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body class="body">
+  <input type="text" class="input" placeholder="색상 이름이나 HEX 코드를">
+  <div class="red">유효하지 않은 색상입니다!</div>
+  <script>
+    const $body = document.querySelector('.body');
+    const $input = document.querySelector('.input');
+    const $red = document.querySelector('.red');
+    function open() {
+      if ($input.value === $input.style.backgroundColor) {
+      $red.style.display = 'block'
+      }
+    }
+    function hide() {
+      if ($input.value === 'orange') {
+      }
+      bodyColor();
+      $red.style.display = 'none';
+    }
+    function bodyColor() {
+      $body.style.background = $input.value;
+    }
+
+    $input.addEventListener('change', open)
+    $input.addEventListener('change', hide)
+    
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실시간 배경색 변경</title>
+</head>
+<body>
+
+  <input type="text" id="colorInput" placeholder="색상 이름이나 HEX 코드를 입력하세요">
+  <div id="warning" style="color: red; display: none;">유효하지 않은 색상입니다!</div>
+
+  <script>
+    const $input = document.getElementById('colorInput');
+    const $warning = document.getElementById('warning');
+
+    $input.addEventListener('input', () => {
+      document.body.style.background = $input.value;
+      
+      // 입력값이 이상하다?
+      if (document.body.style.background !== $input.value || $input.value === '') {
+        $warning.style.display = 'block';
+      } else {
+        $warning.style.display = 'none';
+      }
+    })
+  </script>
+
+</body>
+</html>
