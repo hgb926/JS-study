@@ -23,10 +23,13 @@ let count = 0;
 
 
 //=============== 함수 정의 영역 =================//
+
+
+
 // 계산 기능 헬퍼 함수
 const calculate = (e) => {
   // 더하기를 해야 함 
-  // 계산 전 값을 백엄
+  // 계산 전 값을 백업
   const prevResult = currentResult;
   
   if (e.target === $addBtn) {

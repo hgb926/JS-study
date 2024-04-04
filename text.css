@@ -1,0 +1,50 @@
+
+.game {
+  width: 700px;
+  height: 600px;
+  margin: 0 auto;
+  background: yellow;
+  border: 1px solid #000;
+}
+
+
+.wrap {
+  width: 850px;
+  height: 600px;
+  margin: auto;
+  background: lightgreen;
+  border: 1px solid #000;
+  margin-top: 7%;
+}
+
+.wrap .box {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border: 5px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: blue;
+  border: 5px solid black;
+
+}
+.aaa {
+  width: 40px;
+  height: 40px;
+  background: white;
+}
+
+
+.grey  {
+  background: lightgrey;
+}
+.white {
+  background: white;
+}
